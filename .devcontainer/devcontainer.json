@@ -1,0 +1,19 @@
+{
+  "name": "PHP & Frontend Environment",
+  "image": "mcr.microsoft.com/devcontainers/php:8.2",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {} // Instaluje Node.js/NPM dla JS i CSS
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client", // Inteligentne podpowiadanie PHP
+        "xdebug.php-debug",                   // Debugowanie PHP
+        "esbenp.prettier-vscode",             // Formatywanie JS/CSS/HTML
+        "ritwickdey.LiveServer"               // Podgląd HTML na żywo
+      ]
+    }
+  },
+  "forwardPorts": [8080, 3000],
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y libapache2-mod-php"
+}
